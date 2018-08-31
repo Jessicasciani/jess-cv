@@ -1,2 +1,133 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="navbar flex">
+  <p>PROJECTS</p>
+  <p>ABOUT</p>
+  <p>CONTACT</p>
+</div>
+
+<div class="banner">
+  <h3 class="job">FULLSTACK WEB-DEVELOPER</h3>
+  <h1 class="name">JESSICA SCIANIMANICA</h1>
+  <%= image_tag "jesscover.jpg" %>
+</div>
+
+<hr>
+
+<div class="titles">
+  <h3 class="small-title">PROJECTS</h3>
+  <h2 class="big-title">DISCOVER MY LATEST PROJECTS</h2>
+</div>
+
+<div class="project">
+  <%= image_tag "project-pixel.jpg" %>
+
+  <div class="description">
+    <h3 class="small-title">CLIENT</h3>
+    <h2 class="big-title">PIXEL & BECHAMEL</h2>
+    <p>A food photography website with a admin interface and the possibility to add pictures, videos, articles directly through the platform.</p>
+  </div>
+
+</div>
+
+
+<hr>
+
+<div class="titles">
+  <h3 class="small-title">ABOUT ME</h3>
+  <p class="me">My name is Jessica.
+  I’ve graduated from Le Wagon Coding School in September 2017 and I’ve been working as a full-stack developer since then.</p>
+</div>
+
+<div class="skillss">
+  <div class="skill-box">
+    <div class="skills-circle">
+      <ul>
+        <li data-percent="90"><span class="text">RUBY</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
+        <li data-percent="85"><span class="text">RAILS</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
+        <li data-percent="100"><span class="text">HTML</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
+        <li data-percent="100"><span class="text">CSS</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
+        <li data-percent="40"><span class="text">JAVASCRIPT</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
+        <li data-percent="85"><span class="text">SKETCH</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="contact">
+  <h2 class="form-title">A project in mind?</h2>
+  <h3 class="form-sm-title">LET'S HAVE A CHAT</h3>
+  <form action="https://formspree.io/your@email.com"
+        method="POST">
+      <input type="text" name="name">
+      <input type="email" name="_replyto">
+      <input type="submit" value="Send">
+  </form>
+
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<script>
+$(document).ready(function () {
+  $('.skill-box').find('b').each(function (i) {
+    return $(this).prop('Counter', 0).animate({
+      Counter: $(this).parent().data('percent')
+    }, {
+      duration: 1000,
+      easing: 'swing',
+      step(now) {
+        return $(this).text(Math.ceil(now) + '%');
+      }
+    });
+  });
+
+  return $('.skill-box .skills-circle li').each(function (i) {
+    const _right = $(this).find('.bar-circle-right');
+    const _left = $(this).find('.bar-circle-left');
+    const _percent = $(this).attr('data-percent');
+    let deg = 3.6 * _percent;
+    if (_percent <= 50) {
+      return _right.animate({
+        circle_rotate: deg
+      }, {
+        step(deg) {
+          $(this).css('transform', `rotate(${deg}deg)`);
+        },
+        duration: 1000
+      });
+    } else {
+      const full_deg = 180;
+      deg -= full_deg;
+      let run_duration = 1000 * (50 / _percent);
+      return _right.animate({
+        circle_rotate: full_deg
+      }, {
+        step(full_deg) {
+          $(this).css('transform', `rotate(${full_deg}deg)`);
+        },
+        duration: run_duration,
+        easing: 'linear',
+        complete() {
+          run_duration -= 1000;
+          _left.css({
+            'clip': 'rect(0, 150px, 150px, 75px)',
+            'background': '#8bc34a'
+          });
+          return _left.animate({
+            circle_rotate: deg
+          }, {
+            step(deg) {
+              $(this).css('transform', `rotate(${deg}deg)`);
+            },
+            duration: Math.abs(run_duration),
+            easing: 'linear'
+          });
+        }
+      });
+    }
+  });
+});
+</script>

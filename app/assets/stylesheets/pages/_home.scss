@@ -1,1 +1,199 @@
-// Specific CSS for your home-page
+body {
+  background:  #ffffff;
+}
+
+hr {
+  border-color: #FF9A44;
+  width: 90%;
+}
+
+.me {
+  color: #727272;
+  font-size: 18px;
+  letter-spacing: 1px;
+  width: 20%;
+  margin-top: 3%;
+}
+
+.navbar  {
+  justify-content: flex-end;
+  margin-top: 10px;
+  p {
+    margin-right: 30px;
+    letter-spacing: 0.5em;
+  }
+}
+
+.name {
+  position: absolute;
+  left: 168px;
+  font-size: 66px;
+  top: 8px;
+  width: 350px;
+  font-family: lora;
+  letter-spacing: 0.1em;
+  color: #2c2c2c;
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.banner {
+  img {
+    width: 1028px;
+    margin: 35px auto;
+    display: block;
+  }
+}
+
+.job {
+  font-size: 22px;
+  position: absolute;
+  left: 173px;
+  top: 150px;
+  font-weight: bold;
+  color: #FF9A44;
+  letter-spacing: 0.3em;
+
+}
+
+.small-title {
+  font-size: 16px;
+  color: #a3a3a3;
+  font-weight: bold;
+  font-family: Source Sans Pro;
+  letter-spacing: 0.1em;
+}
+
+.big-title {
+  letter-spacing: 0.1em;
+  font-size: 26px;
+  color: #FF9A44;
+  font-family: lora;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.titles {
+  margin-left: 5%;
+}
+
+.project {
+  display: flex;
+  margin: 100px 5%;
+  img {
+    height: 380px;
+    box-shadow: 1px 1px 15px lightgrey;
+  }
+}
+
+.description {
+  width: 30%;
+  margin-left: 7%;
+  p {
+    color: #727272;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+}
+
+
+
+
+
+.skill-box {
+  width: 80%;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    max-width: 600px;
+    top: 232%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.skill-box > h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+.skill-box > .skills-circle > ul {
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+}
+.skill-box > .skills-circle > ul > li {
+  width: 150px;
+  height: 150px;
+  background-color: #ddd;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 10px;
+}
+.skill-box > .skills-circle > ul > li > span {
+  color: #7a7;
+}
+.skill-box > .skills-circle > ul > li > span.text, .skill-box > .skills-circle > ul > li > span ~ b {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin-top: -8px;
+  z-index: 1;
+}
+.skill-box > .skills-circle > ul > li > span.text ~ b, .skill-box > .skills-circle > ul > li > span ~ b ~ b {
+  font-weight: normal;
+  margin-top: 8px;
+}
+.skill-box > .skills-circle > ul > li > span.bar-circle-right, .skill-box > .skills-circle > ul > li > span.bar-circle-left {
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #8bc34a;
+  clip: rect(0, 75px, 150px, 0);
+}
+.skill-box > .skills-circle > ul > li > span.bar-circle-left {
+  background: #ddd;
+}
+.skill-box > .skills-circle > ul > li > span.bar-circle-cover {
+  display: block;
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.skillss {
+  margin-bottom: 360px;
+}
+
+.contact{
+  background-color:#FF9A44;
+  height: 500px;
+}
+
+.form-title {
+  color:white;
+  text-align: center;
+}
+
+.form-sm-title {
+  color:white;
+  text-align: center;
+}
