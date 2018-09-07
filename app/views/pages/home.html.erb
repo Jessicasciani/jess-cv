@@ -5,9 +5,14 @@
 </div>
 
 <div class="banner">
-  <h3 class="job">FULLSTACK WEB-DEVELOPER</h3>
+
+   <h3 class="job">
+    <span id="banner-typed-text"></span>
+  </h3>
   <h1 class="name">JESSICA SCIANIMANICA</h1>
   <%= image_tag "jesscover.jpg" %>
+  <a href="#intro" data-scroll>Hire me</a>
+
 </div>
 
 <hr>
@@ -25,6 +30,7 @@
     <h2 class="big-title">PIXEL & BECHAMEL</h2>
     <p>A food photography website with a admin interface and the possibility to add pictures, videos, articles directly through the platform.</p>
   </div>
+<div id="intro">Introduction</div>
 
 </div>
 
@@ -37,19 +43,8 @@
   I’ve graduated from Le Wagon Coding School in September 2017 and I’ve been working as a full-stack developer since then.</p>
 </div>
 
-<div class="skillss">
-  <div class="skill-box">
-    <div class="skills-circle">
-      <ul>
-        <li data-percent="90"><span class="text">RUBY</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
-        <li data-percent="85"><span class="text">RAILS</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
-        <li data-percent="100"><span class="text">HTML</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
-        <li data-percent="100"><span class="text">CSS</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
-        <li data-percent="40"><span class="text">JAVASCRIPT</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
-        <li data-percent="85"><span class="text">SKETCH</span><span class="bar-circle-right"></span><span class="bar-circle-left"></span><span class="bar-circle-cover"></span><b></b></li>
-      </ul>
-    </div>
-  </div>
+
+<div id="container">
 </div>
 
 <div class="contact">
@@ -66,68 +61,43 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
+<!-- <script>
+  // progressbar.js@1.0.0 version is used
+// Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+var ProgressBar = require('progressbar.js')
 
-<script>
-$(document).ready(function () {
-  $('.skill-box').find('b').each(function (i) {
-    return $(this).prop('Counter', 0).animate({
-      Counter: $(this).parent().data('percent')
-    }, {
-      duration: 1000,
-      easing: 'swing',
-      step(now) {
-        return $(this).text(Math.ceil(now) + '%');
-      }
-    });
-  });
+var bar = new ProgressBar.Circle(container, {
+  color: '#aaa',
+  // This has to be the same size as the maximum width to
+  // prevent clipping
+  strokeWidth: 4,
+  trailWidth: 1,
+  easing: 'easeInOut',
+  duration: 1400,
+  text: {
+    autoStyleContainer: false
+  },
+  from: { color: '#aaa', width: 1 },
+  to: { color: '#333', width: 4 },
+  // Set default step function for all animate calls
+  step: function(state, circle) {
+    circle.path.setAttribute('stroke', state.color);
+    circle.path.setAttribute('stroke-width', state.width);
 
-  return $('.skill-box .skills-circle li').each(function (i) {
-    const _right = $(this).find('.bar-circle-right');
-    const _left = $(this).find('.bar-circle-left');
-    const _percent = $(this).attr('data-percent');
-    let deg = 3.6 * _percent;
-    if (_percent <= 50) {
-      return _right.animate({
-        circle_rotate: deg
-      }, {
-        step(deg) {
-          $(this).css('transform', `rotate(${deg}deg)`);
-        },
-        duration: 1000
-      });
+    var value = Math.round(circle.value() * 100);
+    if (value === 0) {
+      circle.setText('');
     } else {
-      const full_deg = 180;
-      deg -= full_deg;
-      let run_duration = 1000 * (50 / _percent);
-      return _right.animate({
-        circle_rotate: full_deg
-      }, {
-        step(full_deg) {
-          $(this).css('transform', `rotate(${full_deg}deg)`);
-        },
-        duration: run_duration,
-        easing: 'linear',
-        complete() {
-          run_duration -= 1000;
-          _left.css({
-            'clip': 'rect(0, 150px, 150px, 75px)',
-            'background': '#8bc34a'
-          });
-          return _left.animate({
-            circle_rotate: deg
-          }, {
-            step(deg) {
-              $(this).css('transform', `rotate(${deg}deg)`);
-            },
-            duration: Math.abs(run_duration),
-            easing: 'linear'
-          });
-        }
-      });
+      circle.setText(value);
     }
-  });
+
+  }
 });
+bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontSize = '2rem';
+
+bar.animate(1.0);  // Number from 0.0 to 1.0
 </script>
+ -->
